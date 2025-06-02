@@ -1,0 +1,55 @@
+{% load static %}
+<link rel="stylesheet" href="{% static "style.css" %}">
+<script rel="text/javascripts" src="{% static "jquery.min.js" %}"></script>
+<script rel="text/javascripts" src="{% static "scripts.js" %}"></script>
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<title>shop index page</title>
+</head>
+<body>
+    <header class="heading"><marquee><h4>List Of Debts Debted Every Day By Clients</h4></marquee></header>
+    <div class="container">
+       <table class="table" border="1">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Debting Date</th>
+                <th scope="col">Debtor</th>
+                <th scope="col">item Type</th>
+                <th scope="col">Item Quantity</th>
+                <th scope="col">Item Price</th>
+                <th scope="col">Payment Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for page in pages%}
+            <tr>
+                <td>{{page.id}}</td>
+                <td>{{page.date}}</td>
+                <td>{{page.name}}</td>
+                <td>{{page.item_type}}</td>
+                <td>{{page.quantity}}</td>
+                <td>{{page.price}}</td>
+                <td><input type="checkbox" name="status"></td>
+            </tr>
+            {%endfor%}
+        </tbody>
+       </table> 
+       {%if pages.has_previous%}
+       <a href="?page=1">first</a>
+       <a href="?page={{pages.previous_page_number}}">&laquo; previous</a>
+       {%endif%}
+       {%for message in messages%}
+       <span>{{message}} </span>
+       {%endfor%}
+       <span>page {{pages.number}} of {{pages.paginator.num_pages}}</span>
+
+       {%if pages.has_next%}
+       <a href="?page={{pages.next_page_number}}">&raquo; next</a>
+       <a href="?page={{pages.paginator.num_pages}}">Last</a>
+       {%endif%}
+    </div>
+</body>
+</html>

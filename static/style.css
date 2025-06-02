@@ -1,0 +1,350 @@
+body{
+    background-color: rgb(231, 240, 247);
+    font-weight: bold;
+    overflow-x: hidden;
+}
+
+.flex-container{
+    display: flex;
+    width: 50%;
+    height: auto;
+    flex-flow: column wrap;
+    background-color: skyblue;
+    border: 1px solid black;
+    margin: 6px auto;
+}
+.flex-container input, select,button{
+    padding: 1em;
+    margin: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 2em;
+}
+@media  only screen and (min-width: 992px){
+.flex-container input, select, button{
+    width: 98%;
+    padding: 10px;
+}
+}
+.flex-container header{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    font-style: italic;
+    text-transform: capitalize;
+    margin: 0.8em;
+    align-self: center;
+
+}
+.flex-container button:hover{
+    cursor: pointer;
+   background-color: brown;
+
+}
+
+@media only screen and (max-width: 991px){
+   .flex-container{
+    width: 100%;
+    margin-top: 10%;
+   }
+   .flex-container input,button,select{
+    width: 95%;
+   } 
+}
+.container .table{
+    align-self: center;
+    margin: 4px auto;
+    width: 100%;
+}
+.container .table tr td{
+    padding:1%;
+}
+.heading{
+    background-color: steelblue;
+    color: white;
+}
+.container .table input[type="checkbox"]{
+    background-color: red;
+}
+.container .table input[type="checkbox"]:checked{
+background-color: green;
+}
+#left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+#left input{
+    padding: 2rem;
+    margin: 22px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    line-height: 22px;
+}
+#left button{
+  padding: 1em;
+  cursor: pointer;
+}
+#left button:hover{
+    background-color: yellowgreen;
+}
+#right{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left:55%;
+    margin-top: -30%;
+}
+#right input,select{
+    padding: 2rem;
+    margin: 22px;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    line-height: 22px;
+}
+#right #lipia2{
+    display: none;
+}
+@media only screen and (max-width: 991px){
+    #right,#left{
+        width: 100%;
+        height: auto;
+    }
+    #right{
+        margin-top: 10%;
+        margin-left: 0%;
+    }
+    #right > input,select,button{
+        width:100%;
+        padding:8%;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    #left > input,select,button{
+        width:100%;
+        padding:8%;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+    #right #lipia2{
+        display: block;
+        cursor: pointer;
+        background-color: yellowgreen;
+        font-weight: bold;
+        font-size: xx-large;
+    }
+    #left button{
+        display: none;
+    }
+}
+@media only screen and (min-width: 992px){
+    #right{
+    width: 50%;
+    margin-left: 50%;
+    margin-top: -30%;
+}
+}
+
+.navbar-top{
+    background-color: rgb(33, 32, 32);
+    position: relative;
+    height:10%;
+    width: 100%;
+    color: white;
+    margin: auto;
+    top:-1%;
+}
+.navbar-top .dropdown-menu{
+    padding: 12px;
+    margin: 5px;
+    color: white;
+    float: right;
+}
+.navbar-top .dropdown-menu li{
+    list-style: none;
+    padding:5px;
+    margin: 10px;
+    display: inline-block;
+}
+.navbar-top .dropdown-menu li a{
+    text-decoration: none;
+    color: white;
+    line-height: 32px;
+}
+.navbar-top .dropdown-menu li:hover{
+    background-color:darkgrey;
+    border-radius:12px;
+    color: blue;
+}
+.navbar-top .img{
+    width:100px;
+    height:100%;
+}
+.widget{
+    background-image: url('./media/meal1.jpg');
+    object-fit: fill;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:50%;  
+}
+.widget{
+    animation-name: background-image;
+    animation-duration:120s;
+    animation-delay: 6s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction:reverse;
+    animation-fill-mode: backwards;
+}
+@keyframes background-image {
+    10%{
+        background-image: url('./media/carote1.jpg');
+    }
+    30%{
+        background-image: url('./media/carote2.jpg');
+    }
+    50%{
+        background-image: url('./media/female\ watch.jpg');
+    }
+    70%{
+        background-image: url('./media/dentcare.jpg');
+    }
+    90%{
+        background-image: url('./media/vegetables.jpg');
+    }
+    90%{
+        background-image: url('./media/images.jpeg');
+    }
+}
+
+.text-content{
+    font-size: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+    text-indent: 10px;
+    align-self: center;
+}
+.body-content{
+ background-image: url('./media/lab3.png');
+ height:50%;
+}
+.body-content .next{
+    position: absolute;
+    font-size:4rem;
+    top: 100%;
+    left: 90%;
+}
+.body-content .next,.pre:hover{
+    cursor: pointer;
+}
+.body-content .pre{
+    position: absolute;
+    font-size:4rem;
+    top: 100%;
+    left:10%;
+}
+
+@media screen  and (max-width:768px){
+    .navbar-top{
+        height:10%;
+        margin: auto;
+    }
+    .navbar-top .dropdown-menu{
+        position: absolute;
+        top:10%;
+        left:20%;
+
+    }
+    .navbar-top .img{
+        width: 70px;
+    }
+    .navbar-top .dropdown-menu li{
+        padding: 0%;
+        margin: 3px;
+    }
+    .body-content .next{
+        left: 80%;
+    }
+    .section{
+        width: 100%;
+        height: auto;
+
+    }
+    .section input,button{
+        width: 100%;
+
+    }
+}
+
+@media screen and(min-width:769px) and (max-width:1023px){
+    .section{
+        width: 80%;
+        margin: 168px auto;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media screen and(min-width:1024px){
+    .section{
+        width: 50%;
+        margin: 168px auto;
+        box-sizing: border-box;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.widget{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    word-break: keep-all;
+}
+.section{
+    background-color: rgb(139, 139, 182);
+    margin: 168px auto;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+}
+.section input{
+    padding: 18px;
+    margin-bottom:16px;
+    margin-top: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    width: 100%;
+}
+.section div{
+    padding: 20px;
+    background-color: skyblue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    align-content: center;
+    text-align: center;
+}
+.section button{
+    padding: 1rem;
+    background-color: grey;
+    color: black;
+    font-size: 1em;
+    margin-left: -2px;
+}
+.section footer{
+    padding: 10px;
+    margin: 12px;
+    text-align: center;
+    justify-content: center;
+}
+.section footer a{
+    text-decoration: none;
+    font-size: 1.3em;
+    color: black;
+}

@@ -1,0 +1,39 @@
+{% load static %}
+<link rel="stylesheet" href="{% static "style.css" %}">
+<script rel="text/javascripts" src="{% static "jquery.min.js" %}"></script>
+<script rel="text/javascripts" src="{% static "scripts.js" %}"></script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>shopping page</title>
+    </head>
+    <body>
+        <div class="navbar-top">
+            <img src="{%static 'media/inv.png'%}"class="img">
+            <ul class="dropdown-menu">
+                <li class="dropdown-item"><a href="{%url 'shop_home'%}" class="dropdown-item"><i class="toggle">Home<i/></a></li>
+                <li class="dropdown-item"><a href="{%url 'shop_bkd'%}">Home shopping</a></li>
+                <li class="dropdown-item"><a href=".../">About</a></li>
+            </ul>
+        </div>
+
+        <div class="widget">
+            <h4 class="text-content">
+                welcome to GMP shopping center 
+            </h4>
+            <span>this shopping center helps you or any customer to buy differnt neeeds
+            these includes home tools and untencils that are used for home tasks perpetuation.</span>
+        </div>
+        <div class="lower">
+            <h4 class="text-content">
+                <marquee>GMP shopping center we value your value</marquee>
+            </h4>
+            <div class="body-content">
+                <code class="pre"><</code>
+                {% comment %} <img src="{%static 'media/female watch.jpg'%}"> {% endcomment %}
+                <code class="next">></code>
+            </div>
+        </div>
+    </body>
+</html>

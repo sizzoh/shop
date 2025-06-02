@@ -1,0 +1,112 @@
+{% load static %}
+<link rel="stylesheet" href="{% static "style.css" %}">
+<script rel="text/javascripts" src="{% static "jquery.min.js" %}"></script>
+<script rel="text/javascripts" src="{% static "scripts.js" %}"></script>
+<style>
+    form #shop_header{
+    padding: 3rem;
+    font-weight: bold;
+    font-size: 2rem;
+}
+</style>
+<form action="shop_bkd" method="post" enctype="multipart/form-data">
+    <header  class="shop_header" id="shop_header"><marquee>Welcome to GMP shopping Mall 🏪🏪🛒🏬</marquee></header>
+    {% csrf_token %}
+<div class="flex-left" id="left">
+    <label for="item">chagua bidhaaa unayoitaka kununua</label>
+    <select name="item_name">
+        <option value="" disabled>chagua bidhaaa unayotaka kununua</option>
+        <option value="">----------</option>
+        <option value="mafuta" >mafuta</option>
+        <option value="unga" >unga</option>
+        <option value="sukari" >sukari</option>
+        <option value="gazeti" >gazeti</option>
+        <option value="Amira" >Amira</option>
+        <option value="pipi" >pipi</option>
+        <option value="karanga" >karanga</option>
+        <option value="ubuyu" >ubuyu</option>
+        <option value="ngano" >ngano</option>
+        <option value="big boss" >big boss</option>
+        <option value="big bom" >big bom</option>
+        <option value="rambo" >rambo</option>
+        <option value="sabuni" >sabuni</option>
+        <option value="daftari" >daftari</option>
+        <option value="GBOOST" >GBOOST</option>
+        <option value="u-fresh" >u-fresh</option>
+        <option value="take away" >take away</option>
+        <option value="dawa ya meno" >dawa ya meno</option>
+        <option value="mswaki" >mswaki</option>
+        <option value="magufuli" >magufuli</option>
+        <option value="kiroba" >kiroba</option>
+        <option value="baking powder" >baking powder</option>
+        <option value="battery" >battery</option>
+        <option value="chumvi" >chumvi</option>
+        <option value="tochi" >tochi</option>
+        <option value="biscuit" >biscuit</option>
+        <option value="powder" >powder</option>
+        <option value="pampasi" >pampasi</option>
+        <option value="gricelin" >gricelin</option>
+        <option value="wembe" >wembe</option>
+        <option value="rungu spray" >rungu spray</option>
+        <option value="stir wood" >stir wood</option>
+        <option value="kiberiti" >kiberiti</option>
+        <option value="tambi" >tambi</option>
+        <option value="chill source" >chill source</option>
+        <option value="pen" >pen</option>
+        <option value="manila" >manila</option>
+        <option value="mkonge" >mkonge</option>
+        <option value="majani ya chai" >majani ya chai</option>
+        <option value="rangi" >rangi</option>
+        </select>
+
+        <input type="text" name='description'placeholder="ingiza maelezo ya bidhaa unayoitaka eg.sukari ya kupima au sabuni ya kipande ">
+        <label for="item">weka maelezo ya kiasi cha bidhaaa unayoitaka kununua</label>
+    <select name="item_quantity_category">
+        <option value="" disabled>chagua bidhaaa unayoitaka kununua</option>
+        <option value="kilo" >kilo</option>
+        <option value="lita" >lita</option>
+        <option value="nusu" >nusu</option>
+        <option value="kichoteo kidogo" >kichoteo kidogo</option>
+        <option value="kichoteo kikubwa" >kichoteo kikubwa</option>
+        <option value="robo" >robo</option>
+        <option value="mche" >mche</option>
+        <option value="moja" >moja</option>
+        <option value="kijiko" >kijiko</option>
+        <option value="mche jamaa" >mche jamaa</option>
+        <option value="kipande" >kipande</option>
+        <option value="kipande jamaa" >kipande jamaa</option>
+        <option value="robo tatu" >robo tatu</option>
+        <option value="dogo" >dogo</option>
+        <option value="bunda" >bunda</option>
+        <option value="kubwa" >kubwa</option>
+        <option value="ndogo" >ndogo</option>
+        <option value="pisi moja" >pisi moja</option>
+        <option value="jumbo kubwa" >jumbo kubwa</option>
+        <option value="page 100" >page 100</option>
+        <option value="msomaji" >msomaji</option>
+        <option value="counter" >counter</option>
+        <option value="paketi" >paketi</option>
+        </select>
+        <input type="number" name="quantity" placeholder="weka kiasi unachoitaji">
+        <button type="submit" name="submit">lipia bidhaa</button>
+
+</div>
+
+<div class="flex-right" id="right">
+        <label for="payment">chagua aina ya malipo</label>
+        <select name="pay_method">
+            <option value="">chagua moja kati ya hizi</option>
+            <option value="bank">bank</option>
+            <option value="lipa namba">lipa namba</option>
+            <option value="cash">cash</option>
+            <option value="debt">debt</option>
+        </select>
+        <label for="item">Bei elekezi ya bidhaa uliyoichagua kulingana na kiasi</label>
+        <input type="number" name="price" placeholder="bei elekezi ya bidhaa">
+        <input type="tel" name="tel" placeholder="ingiza namba yako ya simu">
+        <label for="date">ingiza tarehe ya manunuzi</label>
+        <input type="datetime-local" name='date'>
+        <button type="submit" name="submit2" id="lipia2">lipia bidhaa</button>
+
+</div>
+</form>

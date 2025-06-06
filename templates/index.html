@@ -1,0 +1,51 @@
+{% load static %}
+<link rel="stylesheet" href="{% static "style.css" %}">
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width" initial-scale="1.0">
+<title>shop index page</title>
+</head>
+<body>
+    <div class="flex-container">
+        <header class="header"><bold>debts submission page</bold></header>
+        <form action="index" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="date">Debting Date</label>
+                <input type="datetime-local" name="date" class="form-control">
+            </div><div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Enter Client name">
+            </div>
+            <div class="form-group">
+                <label for="date">Debted Item</label>
+                <select type="text" name="category" class="form-control">
+                    <option value="" disabled>select item</option>
+                    <option value="Maharage">Maharage</option>
+                    <option value="Sukari">Sukari</option>
+                    <option value="Unga">Unga</option>
+                    <option value="Chapa Mandazi">Chapa Mandazi</option>
+                    <option value="Ivory">Ivory</option>
+                    <option value="Maji makubwa">Maji makubwa</option>
+                    <option value="Ngano">Ngano</option>
+                    <option value="Gazeti">Gazeti</option>
+                    <option value="Amira">Amira</option>
+                    <option value="Biscuit">Biscuit</option>
+                    <option value="Karanga">Karanga</option>
+                    <option value="Daftari">Daftari</option>
+                    <option value="Stir wood">Stir wood</option>
+                </slect>
+            </div>
+            <div class="form-group">
+                <input type="text" name="quantity" class="form-control" placeholder="enter item Quantity">
+            </div>
+            <div class="form-group">
+                <input type="number" name="price" class="form-control" placeholder="enter item Price">
+            </div>
+            <div class="form-group">
+               <button type="submit" name="btn">submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

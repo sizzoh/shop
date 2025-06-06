@@ -1,0 +1,51 @@
+{% load static %}
+<link rel="stylesheet" href="{% static "style.css" %}">
+<script rel="text/javascripts" src="{% static "jquery.min.js" %}"></script>
+<script rel="text/javascripts" src="{% static "scripts.js" %}"></script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <title>shopping page</title>
+        <style rel="stylesheet" type="text/css">
+           body{
+               background-color:rgb(106, 90, 205);
+           } 
+        </style>
+    </head>
+    <body>
+        <section class="section">
+            <div class="header">fill in your details to visit the shop</div>
+            <form action="verify" method="post">
+                {% csrf_token %}
+                {%for message in messages %}
+                <center><p style="margin-top:5px">{{message}}</p></center>
+                {%endfor%}
+                <input type="email" name="email"class="form-control" placeholder="fill in your email"></input>
+            <input type="tel" name="tel"class="form-control" placeholder="fill in your phone number"></input>
+            <button type="submit">verify your identity</button></form>
+            <footer class="form-group">
+                <a href="" id="home_link">go to home</a>
+            </footer>
+        </section>
+        <script>
+            $(function(){
+                $('#home_link').on('click',function(){
+                   var auth = prompt("ingiza email yako kutambuliwa","");
+                   $.ajax({
+                    url: '/authenticate',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {'auth': auth},
+                    success: function(data){
+                        console.log(JSON.parse(data.responseText));
+                    },
+                    error: function(error, xhr){
+                        console.log(error+ "error verifying your identity " + JSON.stringify(xhr.responseText));
+                    }
+                   })
+                })
+            })
+        </script>
+    </body>
+    </html>

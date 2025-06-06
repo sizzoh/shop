@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-vs!wi$b(u6c1cul1!0@p8o_u%oj)z#0b_w66-toj75l@@&frv5
 DEBUG = os.environ.get("DEBUG", "True") == "True"
 
 #ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '127.0.0.1:8000', 'localhost', 'https://shop-oy1u.onrender.com:8000']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
